@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../Components/Card/Product-Card'
 import NavBar from '../Components/NavBar'
-import SearchIcon from '@material-ui/icons/Search'
-import CloseIcon from '@material-ui/icons/Close'
 import { API } from '../Config/Api'
 import { useQuery } from 'react-query'
 
@@ -28,18 +26,6 @@ export default function Homepage() {
         return response.data.product
     })
 
-    const fil = () => {
-        const data = products?.filter((item, index) => {
-            if (searchItem == '') {
-                <ProductCard item={item} key={item} />
-            } else if (item.name.toLowerCase().includes(searchItem.toLowerCase())) {
-                <ProductCard item={item} key={index} />
-                console.log(item.name)
-            }
-        })
-        return data
-    }
-
   return (
     <div className='bg'>
         <NavBar title={title}  />
@@ -56,18 +42,6 @@ export default function Homepage() {
                         placeholder='Search...'  
                         value={searchItem}
                     />
-                    {searchItem.length === 0 ? (
-                        <SearchIcon 
-                        className='header_searchIcon px-1' 
-                        style={{fontSize: '35px'}}
-                        />
-                    ) : (
-                        <CloseIcon
-                        className='header_searchIcon px-1' 
-                        style={{fontSize: '35px'}}
-                        onClick={() => setSearchItem('')}
-                        />
-                    )}
                 </div>
             </div>
             <div>

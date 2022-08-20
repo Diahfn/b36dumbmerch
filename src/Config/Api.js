@@ -1,7 +1,7 @@
 export const API = () => {
     const baseUrl = process.env.REACT_APP_SERVER_URL || 
-    'https://dumbmerch-b36.herokuapp.com' ||
-    'http://localhost:5000/api/v1'
+    'https://dumbmerch-b36.herokuapp.com'
+    // 'http://localhost:5000/api/v1'
 
     const executeAPI = async (endpoint, config) => {
         const response = await fetch(baseUrl + endpoint, config)

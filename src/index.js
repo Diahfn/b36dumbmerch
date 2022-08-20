@@ -9,6 +9,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { UserContextProvider } from './Context/User-Context';
 import { QueryClient, QueryClientProvider } from 'react-query'
 
+// favicon
+import Favicon from "./assets/DumbMerch.png";
+const favicon = document.getElementById("idFavicon");
+favicon.setAttribute("href", Favicon);
+
+
 const client = new QueryClient()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
